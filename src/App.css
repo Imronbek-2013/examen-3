@@ -1,0 +1,1832 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 14px/1.55 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-h);
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+h1 { font-size: 26px; }
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+
+/* Rang va Matn Utilitlari */
+.text-emerald { color: var(--emerald) !important; }
+.text-danger { color: var(--danger) !important; }
+.text-amber { color: var(--amber) !important; }
+.text-blue { color: var(--blue) !important; }
+.text-purple { color: var(--purple) !important; }
+.font-bold { font-weight: 700 !important; }
+
+/* ---------- NEXUS BRAND LOGO & SQUIRCLE ---------- */
+.nexus-logo-squircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+  flex-shrink: 0;
+}
+
+.brand-title {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.dot-accent {
+  color: #a855f7;
+}
+
+.brand-subtitle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.online-indicator-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+/* ---------- LOGIN SAHIFASI (Nexus Education Style) ---------- */
+.nexus-login-surface {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 50% 20%, #1e1b4b 0%, #0f172a 60%, #020617 100%);
+  padding: 80px 20px 40px;
+  position: relative;
+}
+
+.nexus-login-card {
+  width: 100%;
+  max-width: 430px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 38px 34px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 35px rgba(99, 102, 241, 0.15);
+  text-align: center;
+}
+
+.login-kicker-tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #818cf8;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.login-welcome-title {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.nexus-demo-callout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.28);
+  border-radius: 14px;
+  padding: 10px 14px;
+  margin-top: 18px;
+  text-align: left;
+}
+
+.demo-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #6366f1;
+  color: #ffffff;
+  padding: 2px 7px;
+  border-radius: 99px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.demo-creds {
+  font-size: 11.5px;
+  color: #cbd5e1;
+  display: flex;
+  gap: 10px;
+}
+
+.demo-fill-btn {
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 3px 10px rgba(99, 102, 241, 0.35);
+}
+
+.demo-fill-btn:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.input-icon-wrap {
+  position: relative;
+  margin-top: 6px;
+}
+
+.input-prefix-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 14px;
+}
+
+.nexus-login-card input {
+  width: 100%;
+  padding: 11px 40px 11px 38px;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  font: inherit;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.nexus-login-card input:focus {
+  border-color: #818cf8;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.input-eye-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.nexus-login-btn {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  padding: 12px;
+}
+
+/* ---------- TUGMALAR (BUTTONS) ---------- */
+.btn {
+  border: none;
+  border-radius: 11px;
+  padding: 9px 16px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  background: var(--card);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  transition: all 0.16s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 3px 12px var(--accent-glow);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 5px 16px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text-h);
+}
+
+.btn-outline:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline-white {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.btn-sm {
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.btn-block {
+  width: 100%;
+  padding: 11px;
+  justify-content: center;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 7px;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.link:hover {
+  background: var(--accent-soft);
+}
+
+.link.danger {
+  color: var(--danger);
+}
+
+.link.danger:hover {
+  background: var(--danger-soft);
+}
+
+/* ---------- SIDEBAR (Nexus Categorized Navigation) ---------- */
+.layout {
+  display: flex;
+  min-height: 100svh;
+}
+
+.sidebar {
+  width: 255px;
+  background: var(--sidebar);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  flex-shrink: 0;
+  border-right: 1px solid var(--sidebar-border);
+  z-index: 30;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 20px 18px;
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
+.sidebar-scrollable-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.nav-section-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.nav-section-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #475569;
+  padding: 0 10px 6px;
+  text-transform: uppercase;
+}
+
+.nexus-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 9.5px 12px;
+  border: none;
+  border-radius: 11px;
+  background: transparent;
+  color: #94a3b8;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.16s ease;
+}
+
+.nexus-nav-item:hover {
+  background: var(--sidebar-hover);
+  color: #f1f5f9;
+}
+
+.nexus-nav-item.active {
+  background: #6366f1;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 3px 12px rgba(99, 102, 241, 0.35);
+}
+
+.nav-icon-glyph {
+  width: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.nav-item-text {
+  flex: 1;
+}
+
+.nav-badge-pill {
+  font-size: 10px;
+  font-weight: 700;
+  background: #10b981;
+  color: #ffffff;
+  padding: 2px 7px;
+  border-radius: 99px;
+  text-transform: uppercase;
+}
+
+/* Sidebar User Footer */
+.sidebar-user-footer {
+  padding: 14px;
+  border-top: 1px solid var(--sidebar-border);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.footer-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.footer-user-meta {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.footer-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f1f5f9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer-role {
+  font-size: 11px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.footer-logout-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 15px;
+  border-radius: 8px;
+  transition: all 0.15s;
+}
+
+.footer-logout-btn:hover {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.15);
+}
+
+/* ---------- TOPBAR (Nexus Style) ---------- */
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.nexus-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nexus-burger {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.breadcrumb-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.breadcrumb-root {
+  color: var(--muted);
+}
+
+.breadcrumb-separator {
+  color: var(--border);
+}
+
+.breadcrumb-active {
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 7px 14px;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.topbar-search-btn:hover {
+  border-color: var(--accent);
+}
+
+.topbar-search-btn kbd {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 6px;
+  color: var(--muted);
+}
+
+.topbar-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  position: relative;
+  transition: all 0.15s;
+}
+
+.topbar-icon-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.notification-badge-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.notification-dropdown-box {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 320px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 16px;
+  z-index: 100;
+  animation: slideUp 0.18s ease;
+}
+
+.notif-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.notif-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notif-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 12.5px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.notif-list li:last-child {
+  border-bottom: none;
+}
+
+.notif-list p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 11.5px;
+}
+
+.header-admin-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 4px 10px 4px 4px;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.header-admin-pill:hover {
+  border-color: var(--accent);
+}
+
+.header-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.header-admin-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+/* ---------- CONTENT & WELCOME BANNER ---------- */
+.content {
+  padding: 24px 28px;
+  flex: 1;
+}
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.nexus-welcome-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #8b5cf6 100%);
+  color: #ffffff;
+  border-radius: var(--radius);
+  padding: 30px 34px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
+  margin-bottom: 24px;
+}
+
+.nexus-welcome-banner::after {
+  content: '';
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.welcome-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 3px 10px;
+  border-radius: 99px;
+  margin-bottom: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.nexus-welcome-banner h1 {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 4px 0 8px;
+}
+
+.nexus-welcome-banner p {
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 18px;
+  font-size: 13.5px;
+  max-width: 580px;
+  line-height: 1.5;
+}
+
+.welcome-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.illustration-squircle {
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- 8 TA KPI STATISTIKA KARTALARI (2x4 Grid) ---------- */
+.kpi-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.nexus-kpi-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.nexus-kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: var(--shadow-hover);
+}
+
+.kpi-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kpi-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.kpi-icon-container {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+}
+
+.kpi-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-h);
+  margin: 10px 0 6px;
+  letter-spacing: -0.02em;
+}
+
+.kpi-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+}
+
+.kpi-change-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 99px;
+}
+
+.kpi-change-pill.positive {
+  background: var(--emerald-soft);
+  color: var(--emerald);
+}
+
+.kpi-change-pill.negative {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.kpi-sub-text {
+  color: var(--muted);
+}
+
+/* ---------- GRAFIKLAR VA ANALITIKA (CHARTS) ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.card-head-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.card-sub-desc {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 2px 0 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stats-grid.cols-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Bar Chart Visual */
+.bar-chart-visual-wrapper {
+  padding-top: 10px;
+}
+
+.chart-bars-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 180px;
+  padding: 0 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.chart-bar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 44px;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.bar-tooltip {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.bar-pillar-wrap {
+  width: 24px;
+  height: 130px;
+  background: var(--bg);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.bar-pillar-fill {
+  width: 100%;
+  background: linear-gradient(180deg, #6366f1 0%, #4f46e5 100%);
+  border-radius: 8px 8px 0 0;
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bar-x-axis-label {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.chart-legend-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Payment Ratio Donut Visual */
+.payment-ratio-box {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 10px 0;
+}
+
+.donut-visual-container {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.donut-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #10b981 0% 78%,
+    #f59e0b 78% 92%,
+    #ef4444 92% 100%
+  );
+  display: grid;
+  place-items: center;
+}
+
+.donut-inner-content {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.donut-inner-val {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--emerald);
+}
+
+.donut-inner-lbl {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.ratio-legend-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ratio-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot-emerald { width: 10px; height: 10px; border-radius: 50%; background: #10b981; }
+.status-dot-amber { width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; }
+.status-dot-red { width: 10px; height: 10px; border-radius: 50%; background: #ef4444; }
+
+.ratio-item-meta {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 12.5px;
+}
+
+.ratio-title {
+  color: var(--text-h);
+  font-weight: 500;
+}
+
+.ratio-val {
+  font-weight: 700;
+}
+
+/* ---------- TEZKOR AMALLAR (QUICK ACTION TILES) ---------- */
+.quick-actions-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.quick-tile {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  position: relative;
+}
+
+.quick-tile:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.quick-tile-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.quick-tile strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--text-h);
+}
+
+.quick-tile p {
+  margin: 3px 0 0;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.quick-tile-arrow {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+/* ---------- SO'NGGI TRANZAKSIYALAR VA TALABALAR RO'YXATI ---------- */
+.nexus-trans-list, .nexus-students-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.nexus-trans-list li, .nexus-students-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.nexus-trans-list li:last-child, .nexus-students-list li:last-child {
+  border-bottom: none;
+}
+
+.trans-method-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.trans-meta, .student-list-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.trans-name, .student-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.trans-sub, .student-sub {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.trans-amount {
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.nexus-avatar-pill {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+/* ---------- KURSLAR KARTALARI (COURSES WITH GRADIENT BANNERS) ---------- */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.nexus-course-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nexus-course-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.course-card-banner {
+  padding: 20px;
+  color: #ffffff;
+  position: relative;
+}
+
+.course-banner-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.course-code-pill {
+  font-size: 10.5px;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.course-banner-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.course-banner-title {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0;
+}
+
+.course-card-body {
+  padding: 20px;
+}
+
+.course-desc-text {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 16px;
+  min-height: 38px;
+}
+
+.course-stats-cell-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: var(--bg);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.course-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell-lbl {
+  font-size: 10.5px;
+  color: var(--muted);
+}
+
+.cell-val {
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.course-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.course-teacher-info {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* ---------- DAVOMAT 3-SEGMENTLI TUGMALARI (ATTENDANCE TOGGLE) ---------- */
+.attendance-toggle-group {
+  display: inline-flex;
+  gap: 4px;
+  background: var(--bg);
+  padding: 3px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.att-pill-btn {
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+}
+
+.att-pill-btn.present.active {
+  background: #10b981;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
+}
+
+.att-pill-btn.late.active {
+  background: #f59e0b;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35);
+}
+
+.att-pill-btn.absent.active {
+  background: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35);
+}
+
+.att-rate-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.att-rate-num {
+  font-size: 12px;
+  font-weight: 700;
+  width: 34px;
+}
+
+.att-mini-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+  max-width: 80px;
+}
+
+.att-mini-fill {
+  height: 100%;
+  background: var(--emerald);
+  border-radius: 99px;
+}
+
+/* ---------- JADVALLAR VA TOOLBAR (TABLES & TOOLBAR) ---------- */
+.toolbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.toolbar-filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.search {
+  min-width: 260px;
+  padding: 9px 15px;
+  border: 1.5px solid var(--border);
+  border-radius: 11px;
+  font: inherit;
+  font-size: 13.5px;
+  background: var(--card);
+  color: var(--text-h);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.filter-select {
+  padding: 9px 13px;
+  border: 1.5px solid var(--border);
+  border-radius: 11px;
+  font: inherit;
+  font-size: 13px;
+  background: var(--card);
+  color: var(--text-h);
+  outline: none;
+  cursor: pointer;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.table-head, .table-row {
+  display: grid;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+}
+
+.student-head, .student-row {
+  grid-template-columns: 2fr 1.3fr 1.5fr 1.4fr 1.2fr 1.3fr 0.8fr;
+}
+
+.payment-head, .payment-row {
+  grid-template-columns: 1.1fr 1.6fr 1.5fr 1.2fr 1.1fr 1.3fr 1.1fr 0.8fr;
+}
+
+.debtor-head, .debtor-row {
+  grid-template-columns: 1.6fr 1.3fr 1.6fr 1.1fr 1.1fr 1.3fr 1.3fr;
+}
+
+.expense-head, .expense-row {
+  grid-template-columns: 2fr 1.4fr 1.2fr 1.3fr 0.8fr;
+}
+
+.teacher-head, .teacher-row {
+  grid-template-columns: 1.8fr 1.4fr 1fr 1.5fr 1.3fr 1fr 0.8fr;
+}
+
+.attendance-head, .attendance-row {
+  grid-template-columns: 50px 2fr 1.4fr 1.4fr 2.2fr;
+}
+
+.table-head {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+}
+
+.table-row {
+  border-bottom: 1px solid var(--border);
+  font-size: 13.5px;
+  transition: background 0.12s ease;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row:hover {
+  background: var(--accent-soft);
+}
+
+.cell-name {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.status-pill.paid { background: var(--emerald-soft); color: var(--emerald); }
+.status-pill.debt { background: var(--danger-soft); color: var(--danger); }
+.status-pill.pending { background: var(--amber-soft); color: var(--amber); }
+
+.badge-pill {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--bg);
+  padding: 3px 9px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+}
+
+.chip {
+  display: inline-block;
+  padding: 2.5px 9px;
+  border-radius: 99px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.empty {
+  padding: 34px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+.row-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+/* ---------- MOLIYA TABLAR & KVITANSIYA (FINANCE) ---------- */
+.finance-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.tab-pill-group {
+  display: flex;
+  gap: 6px;
+  background: var(--card);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.tab-pill {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.16s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tab-pill.active {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 3px 10px var(--accent-glow);
+}
+
+.receipt-tag {
+  font-family: monospace;
+  font-size: 12.5px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+
+.payment-method-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2.5px 9px;
+  border-radius: 99px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.payment-method-chip.payme { background: rgba(2, 132, 199, 0.12); color: #0284c7; }
+.payment-method-chip.click { background: rgba(22, 163, 74, 0.12); color: #16a34a; }
+.payment-method-chip.naqd { background: rgba(217, 119, 6, 0.12); color: #d97706; }
+.payment-method-chip.karta { background: rgba(147, 51, 234, 0.12); color: #9333ea; }
+
+/* Kvitansiya qog'ozi */
+.receipt-paper {
+  background: #ffffff;
+  color: #1e293b;
+  border-radius: 14px;
+  padding: 24px 20px;
+  border: 1px dashed #cbd5e1;
+  text-align: center;
+}
+
+.receipt-header h3 {
+  color: #0f172a;
+  margin: 4px 0;
+  font-size: 17px;
+}
+
+.receipt-divider {
+  border-top: 1px dashed #cbd5e1;
+  margin: 12px 0;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 7px 0;
+  font-size: 13px;
+}
+
+.receipt-row.total-row {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 10px 0 6px;
+}
+
+/* ---------- SOZLAMALAR MAVZU KARTALARI ---------- */
+.theme-selection-card {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.theme-selection-card.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ---------- MODAL DIALOGS ---------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 100;
+  animation: fadeIn 0.16s ease;
+}
+
+.modal {
+  width: 100%;
+  max-width: 480px;
+  max-height: 92svh;
+  overflow-y: auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+.modal h3 {
+  margin-bottom: 18px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 12px;
+}
+
+.modal input, .modal select {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 11px;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--text-h);
+  background: var(--input-bg);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.modal input:focus, .modal select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Quick search Ctrl+K */
+.quick-search-modal {
+  width: 100%;
+  max-width: 540px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  animation: slideUp 0.18s ease;
+}
+
+.quick-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.quick-search-input-wrap input {
+  flex: 1;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 15px;
+  color: var(--text-h);
+  outline: none;
+}
+
+.quick-search-results {
+  padding: 12px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.quick-search-category {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  padding: 4px 10px;
+}
+
+.quick-search-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--text-h);
+  transition: background 0.15s;
+}
+
+.quick-search-item:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Floating Toast */
+.floating-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  font-size: 13.5px;
+  z-index: 1000;
+  animation: slideUp 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- RESPONSIVE DESIGN (MOSLASHUVCHANLIK) ---------- */
+.backdrop {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .kpi-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stats-grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+  .quick-actions-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.4);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    z-index: 25;
+  }
+  .nexus-burger {
+    display: block;
+  }
+  .topbar-search-btn kbd {
+    display: none;
+  }
+  .content {
+    padding: 16px;
+  }
+  .kpi-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .quick-actions-bar {
+    grid-template-columns: 1fr;
+  }
+  .toolbar-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search {
+    min-width: 0;
+  }
+}
