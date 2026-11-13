@@ -6,7 +6,7 @@ export default function Settings({ theme, onToggleTheme, onLogout }) {
   const [toast, setToast] = useState('')
 
   const [centerInfo, setCenterInfo] = useState({
-    name: 'Nexus Education Markazi',
+    name: 'STUND LISTEN O‘quv markazi',
     phone: '+998 71 200 00 00',
     address: 'Toshkent sh., Amir Temur shox ko‘chasi, 107-B',
     email: 'info@nexus-education.uz',

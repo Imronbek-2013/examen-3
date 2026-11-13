@@ -15,7 +15,7 @@ export default function StudentDashboard({ user, groups = [], students = [], tea
 
   if (loading) {
     return (
-      <div className="page">
+      <div className="page student-dashboard-page">
         <div className="stats-grid cols-2">
           <SkeletonCard lines={4} />
           <SkeletonCard lines={4} />
@@ -31,7 +31,7 @@ export default function StudentDashboard({ user, groups = [], students = [], tea
   }
 
   return (
-    <div className="page">
+    <div className="page student-dashboard-page">
       {paySuccessToast && (
         <div className="floating-toast">
           🎉 Payme/Click to‘lov sahifasi ochilmoqda... Tez orada to‘lov tasdiqlanadi!

@@ -96,32 +96,34 @@ function App() {
     }
     return (
       <div className="layout">
-        <header className="nexus-topbar student-topbar">
-          <div className="sidebar-brand" style={{ padding: 0, border: 'none' }}>
-            <div className="nexus-logo-squircle" style={{ width: 38, height: 38, fontSize: 16 }}>
-              <i className="fas fa-graduation-cap" />
+        <div className="main">
+          <header className="nexus-topbar student-topbar">
+            <div className="sidebar-brand" style={{ padding: 0, border: 'none' }}>
+              <div className="nexus-logo-squircle" style={{ width: 38, height: 38, fontSize: 16 }}>
+                <i className="fas fa-graduation-cap" />
+              </div>
+              <div className="brand-title" style={{ fontSize: 15, letterSpacing: '-0.02em' }}>
+                STUND LISTEN
+              </div>
             </div>
-            <div className="brand-title" style={{ fontSize: 18 }}>
-              Nexus<span className="dot-accent">.</span>
+            <h2 style={{ flex: 1, margin: '0 16px', fontSize: 18 }}>O‘quvchi Shaxsiy Kabineti</h2>
+            <div className="topbar-right">
+              <span className="avatar sm">{student.name?.split(' ').map((w) => w[0]).join('') || 'O'}</span>
+              <span className="header-admin-name">{student.name}</span>
+              <button
+                className="topbar-icon-btn theme-toggle-btn"
+                onClick={toggleTheme}
+                title={theme === 'dark' ? 'Kunduzgi rejim' : 'Tungi rejim'}
+              >
+                <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'} />
+              </button>
+              <button className="btn btn-outline btn-sm" onClick={logout}>
+                <i className="fas fa-arrow-right-from-bracket" /> Chiqish
+              </button>
             </div>
-          </div>
-          <h2 style={{ flex: 1, margin: '0 16px', fontSize: 18 }}>O‘quvchi Shaxsiy Kabineti</h2>
-          <div className="topbar-right">
-            <span className="avatar sm">{student.name?.split(' ').map((w) => w[0]).join('') || 'O'}</span>
-            <span className="header-admin-name">{student.name}</span>
-            <button
-              className="topbar-icon-btn theme-toggle-btn"
-              onClick={toggleTheme}
-              title={theme === 'dark' ? 'Kunduzgi rejim' : 'Tungi rejim'}
-            >
-              <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'} />
-            </button>
-            <button className="btn btn-outline btn-sm" onClick={logout}>
-              <i className="fas fa-arrow-right-from-bracket" /> Chiqish
-            </button>
-          </div>
-        </header>
-        <main className="content">{children}</main>
+          </header>
+          <main className="content">{children}</main>
+        </div>
       </div>
     )
   }

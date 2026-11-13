@@ -28,11 +28,25 @@ export default function Reports({ payments = [], students = [], groups = [] }) {
   const totalRev = payments.reduce((sum, p) => sum + (Number(p.amount) || 0), 0) || 56400000
 
   return (
-    <div className="page">
+    <div className="page reports-page">
       {toast && <div className="floating-toast">{toast}</div>}
 
-      {/* Header with period toggle and export */}
-      <div className="finance-header-bar">
+      <div className="reports-heading">
+        <div>
+          <span className="reports-kicker">STUND LISTEN · TAHLIL</span>
+          <h1>Hisobotlar</h1>
+          <p>Markaz faoliyati, to‘lovlar va davomat bo‘yicha jamlanma.</p>
+        </div>
+        <button className="btn btn-primary" onClick={exportCSV}>
+          <i className="fas fa-file-csv" /> CSV hisobot yuklab olish
+        </button>
+      </div>
+
+      <div className="reports-period-panel">
+        <div className="reports-period-copy">
+          <strong>Hisobot davri</strong>
+          <span>Ko‘rsatkichlarni ko‘rish oralig‘ini tanlang</span>
+        </div>
         <div className="tab-pill-group">
           <button
             className={`tab-pill ${period === '3m' ? 'active' : ''}`}
@@ -53,10 +67,6 @@ export default function Reports({ payments = [], students = [], groups = [] }) {
             So‘nggi 12 oy
           </button>
         </div>
-
-        <button className="btn btn-primary" onClick={exportCSV}>
-          <i className="fas fa-file-csv" /> CSV hisobot yuklab olish
-        </button>
       </div>
 
       {/* 4 Summary Cards */}

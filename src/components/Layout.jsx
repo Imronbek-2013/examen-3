@@ -73,10 +73,8 @@ export default function Layout({ onLogout, theme, onToggleTheme, children }) {
             <i className="fas fa-graduation-cap" />
           </div>
           <div className="nexus-brand-text">
-            <div className="brand-title">
-              Nexus<span className="dot-accent">.</span>
-            </div>
-            <div className="brand-subtitle">EDUCATION</div>
+            <div className="brand-title">STUND LISTEN</div>
+            <div className="brand-subtitle">O‘QUV MARKAZI</div>
           </div>
         </div>
 

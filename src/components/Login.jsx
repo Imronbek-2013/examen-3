@@ -38,10 +38,10 @@ export default function Login({ onLogin }) {
           <div className="nexus-logo-squircle" style={{ margin: '0 auto 12px', width: 56, height: 56, fontSize: 24 }}>
             <i className="fas fa-graduation-cap" />
           </div>
-          <div className="brand-title" style={{ fontSize: 26, color: '#fff' }}>
-            Nexus<span className="dot-accent">.</span>
+          <div className="brand-title login-brand-title" style={{ fontSize: 22, color: '#fff' }}>
+            STUND LISTEN
           </div>
-          <div className="brand-subtitle" style={{ letterSpacing: 2, fontSize: 11 }}>EDUCATION</div>
+          <div className="brand-subtitle" style={{ letterSpacing: 1.4, fontSize: 10 }}>O‘QUV MARKAZI</div>
         </div>
 
         {/* Kicker Tag */}
